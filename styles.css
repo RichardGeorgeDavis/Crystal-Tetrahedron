@@ -1,0 +1,232 @@
+:root {
+  color-scheme: dark;
+  --bg-top: #040613;
+  --bg-bottom: #010204;
+  --panel: rgba(12, 16, 32, 0.56);
+  --panel-border: rgba(181, 223, 255, 0.18);
+  --text: #f4f6ff;
+  --muted: rgba(244, 246, 255, 0.72);
+  --accent: #8fe6ff;
+  --shadow: rgba(0, 0, 0, 0.35);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(77, 160, 255, 0.22), transparent 32%),
+    radial-gradient(circle at 80% 12%, rgba(106, 255, 231, 0.15), transparent 28%),
+    linear-gradient(180deg, var(--bg-top), var(--bg-bottom));
+  color: var(--text);
+  font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+
+#scene {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+
+.hud {
+  position: fixed;
+  left: clamp(1rem, 2vw, 1.75rem);
+  bottom: clamp(1rem, 2vw, 1.75rem);
+  width: min(26rem, calc(100vw - 2rem));
+  padding: 1rem 1.15rem 1.05rem;
+  border: 1px solid var(--panel-border);
+  border-radius: 1.25rem;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.1), transparent 38%),
+    var(--panel);
+  box-shadow: 0 1.4rem 3.6rem var(--shadow);
+  backdrop-filter: blur(18px);
+  pointer-events: none;
+}
+
+.admin-panel {
+  position: fixed;
+  top: clamp(1rem, 2vw, 1.75rem);
+  right: clamp(1rem, 2vw, 1.75rem);
+  width: min(24rem, calc(100vw - 2rem));
+  padding: 1rem 1.05rem 1.1rem;
+  border: 1px solid var(--panel-border);
+  border-radius: 1.25rem;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.12), transparent 34%),
+    rgba(7, 10, 23, 0.72);
+  box-shadow: 0 1.4rem 3.6rem var(--shadow);
+  backdrop-filter: blur(18px);
+}
+
+.admin-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.admin-title,
+.admin-hint {
+  margin: 0;
+}
+
+.admin-title {
+  font-family: "SFMono-Regular", "SF Mono", "Menlo", "Consolas", monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(244, 246, 255, 0.8);
+}
+
+.admin-button {
+  border: 1px solid rgba(143, 230, 255, 0.35);
+  border-radius: 999px;
+  background: rgba(143, 230, 255, 0.1);
+  color: var(--text);
+  cursor: pointer;
+  font-family: "SFMono-Regular", "SF Mono", "Menlo", "Consolas", monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  padding: 0.55rem 0.9rem;
+  text-transform: uppercase;
+  transition: background-color 160ms ease, border-color 160ms ease, transform 160ms ease;
+}
+
+.admin-button:hover,
+.admin-button:focus-visible {
+  background: rgba(143, 230, 255, 0.18);
+  border-color: rgba(143, 230, 255, 0.55);
+  outline: none;
+}
+
+.admin-button:active {
+  transform: translateY(1px);
+}
+
+.admin-grid {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.admin-control {
+  display: grid;
+  gap: 0.38rem;
+}
+
+.control-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.control-name,
+.control-value,
+.admin-hint {
+  font-family: "SFMono-Regular", "SF Mono", "Menlo", "Consolas", monospace;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.control-name,
+.control-value {
+  font-size: 0.68rem;
+}
+
+.control-name {
+  color: rgba(244, 246, 255, 0.72);
+}
+
+.control-value {
+  color: var(--accent);
+}
+
+.admin-control input[type="range"] {
+  width: 100%;
+  margin: 0;
+  accent-color: var(--accent);
+}
+
+.admin-hint {
+  margin-top: 0.95rem;
+  color: rgba(244, 246, 255, 0.58);
+  font-size: 0.64rem;
+  line-height: 1.5;
+}
+
+.eyebrow,
+.controls,
+.status,
+.description,
+h1 {
+  margin: 0;
+}
+
+.eyebrow,
+.controls,
+.status {
+  font-family: "SFMono-Regular", "SF Mono", "Menlo", "Consolas", monospace;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.eyebrow {
+  color: var(--accent);
+  font-size: 0.7rem;
+  margin-bottom: 0.45rem;
+}
+
+h1 {
+  font-size: clamp(1.9rem, 4vw, 3rem);
+  line-height: 0.94;
+  text-wrap: balance;
+}
+
+.description {
+  margin-top: 0.7rem;
+  color: var(--muted);
+  line-height: 1.45;
+  max-width: 32ch;
+}
+
+.controls {
+  margin-top: 1rem;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 0.72rem;
+}
+
+.status {
+  margin-top: 0.55rem;
+  font-size: 0.72rem;
+  color: rgba(143, 230, 255, 0.88);
+}
+
+.status[data-state="error"] {
+  color: #ffbdb3;
+}
+
+@media (max-width: 640px) {
+  .hud {
+    left: 0.75rem;
+    right: 0.75rem;
+    bottom: 0.75rem;
+    width: auto;
+  }
+
+  .admin-panel {
+    top: 0.75rem;
+    left: 0.75rem;
+    right: 0.75rem;
+    width: auto;
+  }
+}

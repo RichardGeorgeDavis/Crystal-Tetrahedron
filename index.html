@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Crystal Tetrahedron</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <canvas id="scene" aria-label="Crystal Tetrahedron shader"></canvas>
+    <section class="hud" aria-live="polite">
+      <p class="eyebrow">Shadertoy Port</p>
+      <h1>Crystal Tetrahedron</h1>
+      <p class="description">
+        Brute-force dispersion with a fractal zoom, adapted into a standalone WebGL2 page.
+      </p>
+      <p class="controls">Hold and drag to orbit. Press space to pause.</p>
+      <p class="status" id="status">Initializing WebGL2...</p>
+    </section>
+    <aside class="admin-panel" aria-label="Render controls">
+      <div class="admin-header">
+        <div>
+          <p class="eyebrow">Admin Panel</p>
+          <p class="admin-title">Live Render Controls</p>
+        </div>
+        <button class="admin-button" id="toggle-playback" type="button">Pause</button>
+      </div>
+      <div class="admin-grid">
+        <label class="admin-control" for="disperse-count">
+          <span class="control-meta">
+            <span class="control-name">Dispersion</span>
+            <output class="control-value" id="disperse-count-value" for="disperse-count">5</output>
+          </span>
+          <input id="disperse-count" type="range" min="1" max="8" step="1" value="5">
+        </label>
+        <label class="admin-control" for="bounce-count">
+          <span class="control-meta">
+            <span class="control-name">Bounces</span>
+            <output class="control-value" id="bounce-count-value" for="bounce-count">10</output>
+          </span>
+          <input id="bounce-count" type="range" min="1" max="16" step="1" value="10">
+        </label>
+        <label class="admin-control" for="focus-point">
+          <span class="control-meta">
+            <span class="control-name">Focus Point</span>
+            <output class="control-value" id="focus-point-value" for="focus-point">0.65</output>
+          </span>
+          <input id="focus-point" type="range" min="0.2" max="1.2" step="0.01" value="0.65">
+        </label>
+        <label class="admin-control" for="focus-scale">
+          <span class="control-meta">
+            <span class="control-name">Focus Scale</span>
+            <output class="control-value" id="focus-scale-value" for="focus-scale">1.00</output>
+          </span>
+          <input id="focus-scale" type="range" min="0" max="4" step="0.05" value="1">
+        </label>
+        <label class="admin-control" for="exposure">
+          <span class="control-meta">
+            <span class="control-name">Exposure</span>
+            <output class="control-value" id="exposure-value" for="exposure">16.0</output>
+          </span>
+          <input id="exposure" type="range" min="4" max="24" step="0.5" value="16">
+        </label>
+        <label class="admin-control" for="time-scale">
+          <span class="control-meta">
+            <span class="control-name">Time Scale</span>
+            <output class="control-value" id="time-scale-value" for="time-scale">1.00x</output>
+          </span>
+          <input id="time-scale" type="range" min="0.1" max="2" step="0.05" value="1">
+        </label>
+      </div>
+      <p class="admin-hint">Changes apply immediately. Spacebar toggles pause from anywhere on the page.</p>
+    </aside>
+    <script src="./app.js"></script>
+  </body>
+</html>

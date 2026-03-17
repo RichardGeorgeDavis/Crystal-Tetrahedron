@@ -1,5 +1,9 @@
 # Crystal Tetrahedron
 
+<!-- workspace-hub:cover:start -->
+![Crystal Tetrahedron cover](cover.png)
+<!-- workspace-hub:cover:end -->
+
 Standalone WebGL2 port of the Shadertoy effect [Crystal Tetrahedron](https://www.shadertoy.com/view/WsBfWt).
 
 This version keeps the original two-pass structure of the shader, adds a small browser-based control panel, and exposes the effect as a single static page with no build step.

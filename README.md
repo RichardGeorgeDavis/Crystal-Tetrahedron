@@ -8,6 +8,10 @@ Standalone WebGL2 port of the Shadertoy effect [Crystal Tetrahedron](https://www
 
 This version keeps the original two-pass structure of the shader, adds a small browser-based control panel, and exposes the effect as a single static page with no build step.
 
+## Preview
+
+[Live preview](https://proto.lucidity.design/sites/Crystal-Tetrahedron/)
+
 ## Features
 
 - WebGL2 port of the original raymarched crystal / dispersion effect
@@ -29,9 +33,18 @@ This version keeps the original two-pass structure of the shader, adds a small b
   - Exposure
   - Time scale
 
-## Getting Started
+## Build
 
-No build tooling is required.
+No build tooling is required. This project ships as static files and can be deployed as-is.
+
+Files to publish:
+
+- `index.html`
+- `styles.css`
+- `app.js`
+- `cover.png`
+
+## Local Development
 
 Open `index.html` directly in a WebGL2-capable browser, or serve the folder locally:
 
